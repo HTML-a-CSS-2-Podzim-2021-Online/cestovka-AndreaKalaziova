@@ -1,13 +1,14 @@
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
-/* hlavicka, 3 uvodni foto, 4 odkazove bloky, 3 last minute
+/* 3 uvodni foto, 4 odkazove bloky, 3 last minute
 mobil
 tablet
 pc */
 
 :root {
-    --hlavni_farba: #F03000;
+    --hlavni_barba: #F03000;
+    --pozadi_barva:  rgb(236, 234, 234);
     
     }
 
@@ -20,29 +21,44 @@ body {
 
 h1 {
     text-align:center;
-    text-transform: uppercase;
-    color: var(--hlavni_farba);
 }
-
 ul {
     list-style: none;
-    display: grid;
+    padding: 0;
+ 
 }
 
 li {
-    grid-template-columns: repeat(3, 1fr);
-    color: var(--hlavni_farba);
+    color: var(--hlavni_barba);
+    padding: 1rem 0.5rem;
+    display: inline-block;
 }
+
+li:hover,
+li:focus {
+    color: white;
+    background-color: var(--hlavni_barba);
+}
+
 h3 {
-    color: var(--hlavni_farba);
+    color: var(--hlavni_barba);
     margin: 0.5rem auto;
 }
 
-.novinka {
-    background-color: rgb(236, 234, 234);
+.rozklik--text,
+.sluzba {
+    background-color: var(--pozadi_barva);
     margin: 1.5rem 0;
     padding: 0.5rem 1rem;
 }
+.sluzba {
+    display: flex;
+}
+
+.sluzba img {
+    margin: 1rem 1.5rem auto auto;
+}
+
 .datum {
     font-weight: 300;
     color: grey;
