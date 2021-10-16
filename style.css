@@ -1,21 +1,58 @@
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
-/* hlavicka, 3 uvodni foto, 4 odkazove bloky, 3 last minute, novinky, paticka 
+/* hlavicka, 3 uvodni foto, 4 odkazove bloky, 3 last minute
 mobil
 tablet
 pc */
 
 :root {
-     color: #F03000;}
+    --hlavni_farba: #F03000;
+    
+    }
 
 body {
+    max-width: 360px;
     font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    margin: auto;
+    font-weight: 500;
 }
 
 h1 {
+    text-align:center;
     text-transform: uppercase;
+    color: var(--hlavni_farba);
+}
+
+ul {
+    list-style: none;
+    display: grid;
+}
+
+li {
+    grid-template-columns: repeat(3, 1fr);
+    color: var(--hlavni_farba);
+}
+h3 {
+    color: var(--hlavni_farba);
+    margin: 0.5rem auto;
+}
+
+.novinka {
+    background-color: rgb(236, 234, 234);
+    margin: 1.5rem 0;
+    padding: 0.5rem 1rem;
+}
+.datum {
+    font-weight: 300;
+    color: grey;
+}
+
+
+footer {
+    text-align:center;
+    color: white;
+    background-color: rgb(78, 78, 78);
+    padding: 1rem;
+    font-size: 0.9rem;
 }
