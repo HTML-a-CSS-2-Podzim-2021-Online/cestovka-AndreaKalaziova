@@ -1,8 +1,7 @@
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
-/* 3 uvodni foto, 4 odkazove bloky, 3 last minute
-mobil
+/*
 tablet
 pc */
 
@@ -24,13 +23,12 @@ h1 {
 }
 ul {
     list-style: none;
-    padding: 0;
- 
+    padding: 0; 
 }
 
 li {
     color: var(--hlavni_barba);
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.6rem;
     display: inline-block;
 }
 
@@ -39,16 +37,72 @@ li:focus {
     color: white;
     background-color: var(--hlavni_barba);
 }
-
-h3 {
+h2 {
+    margin-top: 2rem;
+}
+.nadpis--foto {
+    margin: 0.5rem 0;
+    padding-top: 3.4rem;
+    padding-bottom: 1rem;
+}
+.nadpis--text {
     color: var(--hlavni_barba);
     margin: 0.5rem auto;
 }
+.cena {
+    background-color:var(--hlavni_barba);
+    padding: 0.7rem;
+    width: 100px;
+}
+.rozklik--foto p {
+    padding-bottom: 0;
+}
+.uvod--foto1 h3,
+.last_min--foto1 h3 {
+    font-size: 1.7rem;
+}
+.uvod--foto1 {
+    background-image: url(podklady/palmy.jpg);
+    background-repeat:round;
+}
 
+.uvod--foto2 {
+    background-image: url(podklady/jezero.jpg);
+}
+.uvod--foto3 {
+    background-image: url(podklady/nakole.jpg);
+}
+.last_min--foto1 {
+    background-image: url(podklady/lodicka.jpg);
+    background-repeat:round;
+    grid-row: 1;
+}
+
+.last_min--foto2 {
+    background-image: url(podklady/podkova.jpg);
+}
+
+.last_min--foto3 {
+    background-image: url(podklady/zatoka.jpg);
+}
+
+.rozklik {
+    display: grid;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    gap: 1rem;
+}
+.rozklik--foto {
+    color:white;
+    text-shadow: 1.5px 1.5px rgb(90, 90, 90);
+    padding: 1rem 1rem 0 1rem;
+    object-fit: cover;
+    object-position: center bottom;
+    background-color: var(--pozadi_barva);
+}
 .rozklik--text,
 .sluzba {
     background-color: var(--pozadi_barva);
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     padding: 0.5rem 1rem;
 }
 .sluzba {
@@ -64,11 +118,11 @@ h3 {
     color: grey;
 }
 
-
 footer {
     text-align:center;
     color: white;
     background-color: rgb(78, 78, 78);
     padding: 1rem;
+    margin: 1.5rem 0;
     font-size: 0.9rem;
 }
