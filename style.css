@@ -1,15 +1,12 @@
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
-/* pc */
-
 :root {
     --hlavni_barba: #F03000;
     --pozadi_barva:  rgb(236, 234, 234);    
-    }
-
+}
 body {
-    max-width: 420px;
+    min-width: 420px;
     font-family: 'Montserrat', sans-serif;
     margin: auto;
     padding: 2rem;
@@ -109,16 +106,14 @@ h2 {
 .sluzba {
     display: flex;
 }
-.sluzby {  margin-top: 2rem;}
+#sluzby {  margin-top: 2rem;}
 .sluzba img {
     margin: 1rem 1.5rem auto auto;
 }
-
 .datum {
     font-weight: 300;
     color: grey;
 }
-
 footer {
     text-align:center;
     color: white;
@@ -128,8 +123,8 @@ footer {
     font-size: 0.9rem;
 }
 
-@media (min-width: 960px) {
-    body {max-width: 960px}
+@media (min-width: 600px) {
+    body {min-width: 600px}
     .menu {
         display: flex;
         justify-content: space-between;
@@ -137,7 +132,7 @@ footer {
     .rozklik {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
         gap: 1rem;
     }
     .uvod--foto1,
@@ -145,7 +140,7 @@ footer {
         grid-column: 1/3; 
         grid-row: 1/3;
     }
-    .sluzby {
+    #sluzby {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -161,5 +156,34 @@ footer {
     .sluzba img {
         margin: auto;
     }
+}
 
+@media (min-width: 1024px) {
+    body{ max-width: 1024px;
+    }
+    .rozklik {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 2fr;
+    }
+    .uvod--foto1 {
+        grid-column: 1/2; 
+        grid-row: 1/3;
+    }
+    #sluzby {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    }
+    .last-min {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 2fr;
+    }
+    .last_min--foto1 {
+        grid-column: 2/3;      
+    }
+    .novinky {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        gap: 1rem;
+    }
 }
