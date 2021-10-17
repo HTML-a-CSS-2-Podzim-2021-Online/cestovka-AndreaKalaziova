@@ -1,37 +1,33 @@
 html { box-sizing: border-box; }
 *, ::before, ::after { box-sizing: inherit; }
 
-/*
-tablet
-pc */
+/* pc */
 
 :root {
     --hlavni_barba: #F03000;
-    --pozadi_barva:  rgb(236, 234, 234);
-    
+    --pozadi_barva:  rgb(236, 234, 234);    
     }
 
 body {
-    max-width: 360px;
+    max-width: 420px;
     font-family: 'Montserrat', sans-serif;
     margin: auto;
+    padding: 2rem;
     font-weight: 500;
 }
-
 h1 {
     text-align:center;
 }
 ul {
     list-style: none;
     padding: 0; 
+    display: flex;
+    justify-content: space-evenly;
 }
-
 li {
     color: var(--hlavni_barba);
-    padding: 1rem 0.6rem;
-    display: inline-block;
+    padding: 1rem 0.5rem;
 }
-
 li:hover,
 li:focus {
     color: white;
@@ -42,7 +38,7 @@ h2 {
 }
 .nadpis--foto {
     margin: 0.5rem 0;
-    padding-top: 3.4rem;
+    padding-top: 5rem;
     padding-bottom: 1rem;
 }
 .nadpis--text {
@@ -54,6 +50,9 @@ h2 {
     padding: 0.7rem;
     width: 100px;
 }
+.foto-popis {
+    justify-content:flex-end;
+}
 .rozklik--foto p {
     padding-bottom: 0;
 }
@@ -61,11 +60,23 @@ h2 {
 .last_min--foto1 h3 {
     font-size: 1.7rem;
 }
-.uvod--foto1 {
-    background-image: url(podklady/palmy.jpg);
-    background-repeat:round;
+.rozklik--foto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color:white;
+    text-shadow: 1.5px 1.5px rgb(90, 90, 90);
+    padding: 1rem 1rem 0 1rem;
+    background-color: var(--pozadi_barva);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
 }
-
+.uvod--foto1 {
+    background-image: url(podklady/palmy.jpg);    
+    background-repeat:round;
+    background-position-y: unset;
+}
 .uvod--foto2 {
     background-image: url(podklady/jezero.jpg);
 }
@@ -75,29 +86,19 @@ h2 {
 .last_min--foto1 {
     background-image: url(podklady/lodicka.jpg);
     background-repeat:round;
+    background-position-y: unset;
     grid-row: 1;
 }
-
 .last_min--foto2 {
     background-image: url(podklady/podkova.jpg);
 }
-
 .last_min--foto3 {
     background-image: url(podklady/zatoka.jpg);
 }
-
 .rozklik {
     display: grid;
-    grid-template-rows: 1.5fr 1fr 1fr;
+    grid-template-rows: 1.5fr auto auto;
     gap: 1rem;
-}
-.rozklik--foto {
-    color:white;
-    text-shadow: 1.5px 1.5px rgb(90, 90, 90);
-    padding: 1rem 1rem 0 1rem;
-    object-fit: cover;
-    object-position: center bottom;
-    background-color: var(--pozadi_barva);
 }
 .rozklik--text,
 .sluzba {
@@ -108,7 +109,7 @@ h2 {
 .sluzba {
     display: flex;
 }
-
+.sluzby {  margin-top: 2rem;}
 .sluzba img {
     margin: 1rem 1.5rem auto auto;
 }
@@ -125,4 +126,40 @@ footer {
     padding: 1rem;
     margin: 1.5rem 0;
     font-size: 0.9rem;
+}
+
+@media (min-width: 960px) {
+    body {max-width: 960px}
+    .menu {
+        display: flex;
+        justify-content: space-between;
+    }
+    .rozklik {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 1fr 1fr;
+        gap: 1rem;
+    }
+    .uvod--foto1,
+    .last_min--foto1 {
+        grid-column: 1/3; 
+        grid-row: 1/3;
+    }
+    .sluzby {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap:1rem;
+    }
+    .sluzba {
+        margin:0;
+        padding: 1rem;
+        flex-direction: column;
+        justify-content: center;
+        text-align:center
+    }
+    .sluzba img {
+        margin: auto;
+    }
+
 }
